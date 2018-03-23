@@ -16,6 +16,7 @@ var hardBtn = document.getElementById("hardBtn");
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 easyBtn.addEventListener("click", function(){
+  messageDisplay.innerHTML = "";
   easyBtn.classList.add("selected");
   hardBtn.classList.remove("selected");
   numSquares = 3;
@@ -33,6 +34,7 @@ easyBtn.addEventListener("click", function(){
 });
 
 hardBtn.addEventListener("click", function(){
+  messageDisplay.innerHTML = "";
   hardBtn.classList.add("selected");
   easyBtn.classList.remove("selected");
   numSquares = 6;
@@ -49,6 +51,7 @@ hardBtn.addEventListener("click", function(){
 
 resetButton.addEventListener("click", function(){
   //generate all new random Colors
+  messageDisplay.innerHTML = "";
   colors = generateRandomColors(numSquares);
   //pick new random colors from the empty array
   pickedColor = pickColor();
@@ -77,7 +80,7 @@ for(i=0; i < squares.length; i++){
       changeColors(clickedColor);
       headBackground.style.backgroundColor = pickedColor;
     } else {
-      this.style.backgroundColor = "cyan";
+      this.style.backgroundColor = "#333333";
       messageDisplay.innerHTML = "Try Again!!!";
     }
   });
